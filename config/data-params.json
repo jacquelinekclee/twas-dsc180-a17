@@ -1,1 +1,9 @@
-
+{
+  "vcf": "data/raw/ALL.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz",
+  "expressions": "data/raw/GD462.GeneQuantRPKM.50FN.samplename.resk10.txt.gz",
+  "populations": "data/raw/phase1_integrated_calls.20101123.ALL.panel",
+  "chromosome": "22",
+  "cis_thresh": 500000,
+  "gwas_sumstats": "data/raw/PGC2.SCZ.sumstats",
+  "outfile": "assoc.dat"
+}
