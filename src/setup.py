@@ -20,7 +20,7 @@ def install_fusion():
         
         os.chdir("..")
               
-        os.system("R -e \"install.packages('fusion_twas-master/plink2R-master/plink2R/',repos=NULL)\"")
+    os.system("R -e \"install.packages('fusion_twas-master/plink2R-master/plink2R/',repos=NULL)\"")
     
     
     
