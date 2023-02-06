@@ -12,7 +12,7 @@ To run the respository on test data, run `python run.py test`
 
 ## Obtaining raw data
 
-The primary vcfs used in the analysis can be downloaded from [here](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz) and [here](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz.tbi). This analysis used the Chromosome 22 vcfs.
+The primary vcfs used in the analysis can be downloaded from [here](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz) and [here](http://ftp.1000genomes.ebi.ac.uk/vol1/ftp/release/20110521/ALL.chr22.phase1_release_v3.20101123.snps_indels_svs.genotypes.vcf.gz.tbi). This analysis used the Chromosome 22 vcfs from the 1000 Genomes Project.
 
 The gene expression data can downloaded from [here](https://www.ebi.ac.uk/biostudies/files/E-GEUV-1/E-GEUV-1/analysis_results/GD462.GeneQuantRPKM.50FN.samplename.resk10.txt.gz).
 
