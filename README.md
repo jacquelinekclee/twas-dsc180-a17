@@ -1,6 +1,6 @@
-#Transcriptome-Wide Association Study
+# Transcriptome-Wide Association Study
 
-## Running analysis
+## Running the analysis
 
 This repository provides a pipeline to perform a TWAS analysis.
 
@@ -21,3 +21,5 @@ The population data can be downloaded from [here](http://ftp.1000genomes.ebi.ac.
 Various summary statistic files can be downloaded from [here](https://github.com/TiffanyAmariuta/TCSC/tree/main/sumstats) based on a disease of interest.
 
 [This file](https://drive.google.com/uc?export=download&id=1gd6FP4qlteo1dBoAH8zGkXzbZvs2PPt4), which provides IDs and locations for various genes, is also required for plotting purposes.
+
+All of these files should be placed in data/raw
