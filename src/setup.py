@@ -19,12 +19,14 @@ def install_fusion():
         os.system("unzip master.zip")
         
         os.chdir("..")
+        
+    if not os.path.exists(os.getcwd() + '/../R/x86_64-conda-linux-gnu-library/4.1/plink2R'):
               
-    os.system("R -e \"install.packages('fusion_twas-master/plink2R-master/plink2R/',repos=NULL)\"")
+        os.system("R -e \"install.packages('fusion_twas-master/plink2R-master/plink2R/',repos=NULL)\"")
     
     
     
-def create_cleaned_vcf(vcf, populations, **kwargs):
+def create_cleaned_vcf(vcf, populations, temp_loc, **kwargs):
 
     cd = os.getcwd()
     
@@ -33,11 +35,16 @@ def create_cleaned_vcf(vcf, populations, **kwargs):
     pops = pops[pops['population'].isin(['GBR', 'FIN', 'CEU', 'TSI'])]
     pheno['Pop'] = pops['sample']
     pheno['Sample'] = pops['sample']
-    pheno.to_csv(cd + '/data/tmp/phenotype.txt',sep='\t', header=False, index=False)
+    pheno.to_csv(cd + f'/{temp_loc}/phenotype.txt',sep='\t', header=False, index=False)
     
-    if not os.path.exists(os.getcwd() + '/data/tmp/cleaned.bed'):
+    if not os.path.exists(os.getcwd() + f'/{temp_loc}/cleaned.bed'):
+        
+        os.system(f"plink --vcf {vcf} --make-bed --out {temp_loc}/cleaned --keep {temp_loc}/phenotype.txt --silent --allow-no-sex --extract fusion_twas-master/LDREF/1000G.EUR.22.bim")
+            
+            
+            
     
-        os.system(f"plink --vcf {vcf} --make-bed --out data/tmp/cleaned --keep data/tmp/phenotype.txt --allow-no-sex --extract fusion_twas-master/LDREF/1000G.EUR.22.bim")
+        
         
     
 
