@@ -19,8 +19,6 @@ def install_fusion():
         os.system("unzip master.zip")
         
         os.chdir("..")
-        
-    if not os.path.exists(os.getcwd() + '/../R/x86_64-conda-linux-gnu-library/4.1/plink2R'):
               
         os.system("R -e \"install.packages('fusion_twas-master/plink2R-master/plink2R/',repos=NULL)\"")
     
