@@ -57,7 +57,8 @@ def main(targets):
             
         if 'clean' in targets:
             
-            pass
+            os.system('rm -r data/tmp/*')
+            os.system('rm -r data/out/weights/*')
 
 
         if 'test' in targets:

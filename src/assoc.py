@@ -4,11 +4,11 @@ import os
 import gzip
 import sys
 
-def create_wgt_index(expressions, **kwargs):
+def create_wgt_index(genelist, **kwargs):
     
     cd = os.getcwd()
     
-    exp = pd.read_csv(cd + '/' + expressions, sep='\t')
+    genes = pd.read_csv(cd + '/' + genelist, sep='\t')
     
     df = pd.DataFrame(columns=['WGT', 'ID', 'CHR', 'P0', 'P1'])
     df['WGT'] = os.listdir(cd + '/data/out/weights')
@@ -17,11 +17,12 @@ def create_wgt_index(expressions, **kwargs):
 
     df['ID'] = df['WGT'].str.split('.').str[1] +'.'+ df['WGT'].str.split('.').str[2]
 
-    merged = pd.merge(df, exp, left_on = 'ID', right_on = 'Gene_Symbol')
+    merged = pd.merge(df, genes, left_on = 'ID', right_on = 'Gene_Symbol')
 
     df['CHR'] = merged['Chr'].astype(int)
-    df['P0'] = merged['Coord']
-    df['P1'] = merged['Coord'] + 3000
+    df['ID'] = merged['Name']
+    df['P0'] = merged['Start']
+    df['P1'] = merged['End']
 
     df.to_csv(cd + '/data/tmp/wgtlist.txt', index=False, sep='\t')
     

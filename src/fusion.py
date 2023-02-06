@@ -6,6 +6,7 @@ import sys
 
 
 def create_pheno_plink(expressions_ch, pops, ch, gene_id, cis_thresh):
+    
     pheno = pd.DataFrame(columns=['Pop', 'Sample', 'Phenotype'])
     
     start = expressions_ch.iloc[int(gene_id)]['Coord'] - cis_thresh
@@ -44,7 +45,8 @@ def fusion(expressions, populations, chromosome, cis_thresh, **kwargs):
     exp = pd.read_csv(cd + '/' + expressions, sep='\t')
     expressions_ch = exp[exp['Chr'].astype(str) == str(chromosome)]
     pops = pd.read_csv(cd + '/' + populations, sep='\t', usecols=[0, 1, 2], header=None, names=['sample', 'population', 'group'])
-    
+    pops = pops[pops['population'].isin(['GBR', 'FIN', 'CEU', 'TSI'])]
+
     
     for i in range(expressions_ch.shape[0]):
         create_pheno_plink(expressions_ch, pops, chromosome, i, cis_thresh)

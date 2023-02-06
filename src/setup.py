@@ -27,14 +27,17 @@ def install_fusion():
 def create_cleaned_vcf(vcf, populations, **kwargs):
 
     cd = os.getcwd()
+    
     pheno = pd.DataFrame(columns=['Pop', 'Sample'])
     pops = pd.read_csv(cd + '/' + populations, sep='\t', usecols=[0, 1, 2], header=None, names=['sample', 'population', 'group'])
-    pops = pops[pops['population'].isin(['GBR', 'FIN', 'CEU', 'TSI', 'YRI'])]
+    pops = pops[pops['population'].isin(['GBR', 'FIN', 'CEU', 'TSI'])]
     pheno['Pop'] = pops['sample']
     pheno['Sample'] = pops['sample']
     pheno.to_csv(cd + '/data/tmp/phenotype.txt',sep='\t', header=False, index=False)
     
-    os.system(f"plink --vcf {vcf} --make-bed --keep data/tmp/phenotype.txt --out data/tmp/cleaned --allow-no-sex --extract fusion_twas-master/LDREF/1000G.EUR.22.bim")
+    if not os.path.exists(os.getcwd() + '/data/tmp/cleaned.bed'):
+    
+        os.system(f"plink --vcf {vcf} --make-bed --out data/tmp/cleaned --keep data/tmp/phenotype.txt --allow-no-sex --extract fusion_twas-master/LDREF/1000G.EUR.22.bim")
         
     
 
