@@ -1,5 +1,7 @@
 data/
 test/out/
+test/tmp/
+notebooks/
 fusion_twas-master
 master.zip
 __pycache__

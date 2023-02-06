@@ -29,6 +29,15 @@ def main(targets):
         
     if not os.path.exists(os.getcwd() + '/data/out/weights'):                
         os.system("mkdir data/out/weights")
+        
+    if not os.path.exists(os.getcwd() + '/test/out'):                
+        os.system("mkdir test/out")
+        
+    if not os.path.exists(os.getcwd() + '/test/out/weights'):                
+        os.system("mkdir test/out/weights")   
+        
+    if not os.path.exists(os.getcwd() + '/test/tmp'):                
+        os.system("mkdir test/tmp")
     
     if targets[0] == 'all':
         setup.install_fusion(**data_config)
@@ -57,12 +66,26 @@ def main(targets):
             
         if 'clean' in targets:
             
-            pass
+            os.system('rm -r data/tmp/*')
+            os.system('rm -r data/out/*')
+            
+            os.system('rm -r test/tmp/*')
+            os.system('rm -r test/out/*')
 
 
         if 'test' in targets:
+                
+            setup.install_fusion()
+            setup.create_cleaned_vcf(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out'})
             
-            pass
+            fusion.fusion(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out'})
+            
+            assoc.create_wgt_index(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test'})
+            
+            assoc.run_twas(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test.dat'})
+            
+            
+          
 
 if __name__ == '__main__':
     
