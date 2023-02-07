@@ -19,6 +19,10 @@ def install_fusion():
         os.system("unzip master.zip")
         
         os.chdir("..")
+        
+        
+    os.system("R -e \"dir.create(Sys.getenv(\'R_LIBS_USER\'), recursive = TRUE)\"")
+    os.system("R -e \".libPaths(Sys.getenv(\'R_LIBS_USER\'))\"")
               
     os.system("R -e \"install.packages('fusion_twas-master/plink2R-master/plink2R/',repos=NULL)\"")
     
