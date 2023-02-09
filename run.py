@@ -40,7 +40,7 @@ def main(targets):
         os.system("mkdir test/tmp")
     
     if targets[0] == 'all':
-        setup.install_fusion(**data_config)
+        setup.install_fusion()
         setup.create_cleaned_vcf(**data_config)
         
         fusion.fusion(**data_config)
