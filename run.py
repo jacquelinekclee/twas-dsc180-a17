@@ -80,9 +80,9 @@ def main(targets):
             
             fusion.fusion(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out'})
             
-            assoc.create_wgt_index(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test','gene_list': 'test/testdata/genelist.txt'})
+            assoc.create_wgt_index(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test','genelist': 'test/testdata/genelist.txt'})
             
-            assoc.run_twas(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test.dat', 'gene_list': 'test/testdata/test_genelist.txt'})
+            assoc.run_twas(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test.dat', 'genelist': 'test/testdata/test_genelist.txt'})
             
             
           

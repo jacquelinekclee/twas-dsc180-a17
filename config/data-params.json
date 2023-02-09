@@ -7,6 +7,6 @@
   "out_loc": "data/out",
   "chromosome": "22",
   "cis_thresh": 500000,
-  "gwas_sumstats": "data/raw/UKB_460K.lung_FVCzSMOKE.sumstats.gz",
-  "outfile": "lungcapacity.dat"
+  "gwas_sumstats": "data/raw/PASS_IBD_deLange2017.sumstats.gz",
+  "outfile": "ibd.dat"
 }
