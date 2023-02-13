@@ -48,9 +48,9 @@ def get_sig_variants(gwas_sumstats, out_loc, outfile, **kwargs):
     sig_snps.to_csv(fp, index = False)
     return fp
 
-def create_gene_count_table(out_loc, outfile, genelist, **kwargs):
+def create_gene_count_table(out_loc, outfile, expressions, **kwargs):
     cd = os.getcwd()
-    genes = pd.read_csv(cd + '/' + genelist, sep='\t')
+    genes = pd.read_csv(cd + '/' + expressions, sep='\t')
     genes22 = genes.loc[genes.Chr == '22']
     num_genes_at_start = genes22.Gene_Symbol.nunique()
     ibd_dat = pd.read_csv(f'./{out_loc}/{outfile}', sep = '\t')
