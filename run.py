@@ -9,6 +9,7 @@ import json
 import src.setup as setup
 import src.fusion as fusion
 import src.assoc as assoc
+import src.visualize as viz
 
 
 def main(targets):
@@ -48,6 +49,8 @@ def main(targets):
         assoc.create_wgt_index(**data_config)
         assoc.run_twas(**data_config)
         
+        viz.create_visualizations(**data_config)
+        
     else:
     
         if 'setup' in targets:
@@ -64,6 +67,10 @@ def main(targets):
             assoc.create_wgt_index(**data_config)
             assoc.run_twas(**data_config)
             
+        if 'viz' in targets:
+            
+            viz.create_visualizations(**data_config)
+            
         if 'clean' in targets:
             
             os.system('rm -r data/tmp/*')
@@ -71,6 +78,7 @@ def main(targets):
             
             os.system('rm -r test/tmp/*')
             os.system('rm -r test/out/*')
+            
 
 
         if 'test' in targets:
@@ -84,9 +92,8 @@ def main(targets):
             
             assoc.run_twas(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out', 'gwas_sumstats': 'test/testdata/test_sumstats.txt', 'outfile': 'test.dat', 'genelist': 'test/testdata/test_genelist.txt'})
             
+            viz.create_visualizations(**{**data_config, 'vcf': 'test/testdata/test_genotypes.vcf', 'expressions': 'test/testdata/test_expressions.txt', 'populations': 'test/testdata/test_populations.txt', 'temp_loc': 'test/tmp', 'out_loc': 'test/out'})
             
-          
-
 if __name__ == '__main__':
     
     targets = sys.argv[1:]
