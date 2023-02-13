@@ -15,7 +15,7 @@ def create_visualizations(**kwargs):
     create_model_summary_table(**kwargs)
 
 def create_locus_plot(gwas_sumstats, chromosome, out_loc, outfile, **kwargs):
-    os.system(f"cat ./{out_loc}/{outfile} | awk 'NR == 1 || $NF < 0.05/2058' > ./{out_loc}/{outfile}.top")
+    os.system(f"cat ./{out_loc}/{outfile} | awk 'NR == 1 || $NF < 0.05/100' > ./{out_loc}/{outfile}.top")
     os.system(f"Rscript ./fusion_twas-master/FUSION.post_process.R \
     --sumstats ./{gwas_sumstats} \
     --input ./{out_loc}/{outfile}.top \
