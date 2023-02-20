@@ -147,7 +147,7 @@ input, select, textarea {
 		}
 
 	 body, input, select, textarea {
-		color: #182b49;
+		color: #0e0101;
 		font-family: "Source Sans Pro", sans-serif;
 		font-weight: 300;
 		font-size: 1rem;
@@ -171,7 +171,7 @@ input, select, textarea {
 		}
 
 	strong, b {
-		color: #182b49;
+		color: #000000;
 		font-weight: 600;
 	}
 
@@ -451,7 +451,7 @@ input, select, textarea {
 
 		select option {
 			color: #ffffff;
-			background: #1b1f22;
+			background: #00629b;
 		}
 
 		select:focus::-ms-value {
@@ -542,7 +542,7 @@ input, select, textarea {
 		input[type="radio"]:checked + label:before {
 			background: #ffffff !important;
 			border-color: #ffffff !important;
-			color: #1b1f22;
+			color: #00629b;
 			content: '\f00c';
 		}
 
@@ -1096,7 +1096,7 @@ input, select, textarea {
 		button.primary,
 		.button.primary {
 			background-color: #ffffff;
-			color: #1b1f22 !important;
+			color: #00629b !important;
 			font-weight: 600;
 		}
 
