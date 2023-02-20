@@ -1252,6 +1252,10 @@ input, select, textarea {
 
 		}
 
+a:hover { 
+  background-color: rgb(198,146,20);
+}
+
 /* Header */
 
 	#header {
