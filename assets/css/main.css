@@ -37,6 +37,10 @@ ol, ul {
 	list-style: none;
 }
 
+article {
+    color: #ffffff;
+}
+
 blockquote, q {
 	quotes: none;
 }
