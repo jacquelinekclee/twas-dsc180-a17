@@ -48,8 +48,7 @@ def main(targets):
         
         assoc.create_wgt_index(**data_config)
         assoc.run_twas(**data_config)
-        
-        viz.create_visualizations(**data_config)
+       
         
     else:
     
