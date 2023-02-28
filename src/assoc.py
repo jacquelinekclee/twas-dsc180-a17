@@ -12,7 +12,7 @@ def create_wgt_index(genelist, temp_loc, out_loc, **kwargs):
     
     df = pd.DataFrame(columns=['WGT', 'ID', 'CHR', 'P0', 'P1'])
     df['WGT'] = os.listdir(cd + f'/{out_loc}/weights')
-    df = df[df['WGT'] != '.ipynb_checkpoints'].reset_index(drop=True)
+    df = df[(df['WGT'] != '.ipynb_checkpoints') & (df['WGT'].str.split('.').str[-1] != 'hsq')].reset_index(drop=True)
     df['WGT'] = 'weights/' + df['WGT']
 
     df['ID'] = df['WGT'].str.split('.').str[1] +'.'+ df['WGT'].str.split('.').str[2]

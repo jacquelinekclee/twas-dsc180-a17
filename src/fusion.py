@@ -32,6 +32,7 @@ def run_fusion_script(g, temp_loc, out_loc):
 --bfile {temp_loc}/tmp \
 --tmp {temp_loc}/tmp.{g} \
 --out {out_loc}/weights/out.{g} \
+--save_hsq \
 --models top1,lasso,enet \
 --PATH_gcta fusion_twas-master/gcta_nr_robust")
     
