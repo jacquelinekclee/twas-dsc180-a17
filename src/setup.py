@@ -12,7 +12,7 @@ def install_fusion():
         os.system("unzip master.zip")
         os.chdir("fusion_twas-master")
 
-        os.system("wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1BMvHnlAoEK2zYGyxWv_UiP9hrY6s8i6D' -O LDREF.tar.bz2")
+        os.system("wget --no-check-certificate 'https://docs.google.com/uc?export=download&id=1BMvHnlAoEK2zYGyxWv_UiP9hrY6s8i6D&confirm=yes' -O LDREF.tar.bz2")
         os.system("tar xjvf LDREF.tar.bz2")
 
         os.system("wget https://github.com/gabraham/plink2R/archive/master.zip")
