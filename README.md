@@ -4,7 +4,9 @@
 
 This repository provides a pipeline to perform a TWAS analysis.
 
-To run the analysis, run `python run.py all` with the dockerfile `notsamzhou/twas`
+This analysis requires the dockerfile at `notsamzhou/twas`
+
+To run the analysis, run `python run.py all`
 
 If running another analysis with the same gene expression and variant data but different GWAS summary statistics, we do not need to recompute weights for each gene. Just run  `python run.py assoc` with an updated data-params.json
 
