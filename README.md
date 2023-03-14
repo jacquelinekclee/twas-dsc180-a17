@@ -4,7 +4,7 @@
 
 This repository provides a pipeline to perform a TWAS analysis.
 
-This analysis requires the dockerfile at `notsamzhou/twas`
+This analysis requires the DockerHub repository at `notsamzhou/twas:latest`
 
 To run the analysis, run `python run.py all`
 
