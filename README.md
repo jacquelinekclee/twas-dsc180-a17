@@ -1,4 +1,6 @@
-# Transcriptome-Wide Association Study
+# Application of Transcriptome-Wide Association Studies for Identifying Genes Associated with Inflammatory Bowel Disease
+
+Find the capston project website, including the full report and summary of the project's background, analysis, and findings, [here](https://notsamzhou.github.io/twas/).
 
 ## Running the analysis
 
